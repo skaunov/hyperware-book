@@ -119,14 +119,12 @@ Install Rust and some `cargo` tools, by running the following in your terminal:
 ```bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 cargo install wasm-tools
-rustup install nightly
-rustup target add wasm32-wasip1 --toolchain nightly
-cargo install cargo-wasi
+rustup target add wasm32-wasip1
 ```
 
 For more information, or debugging, see the [Rust lang install page](https://www.rust-lang.org/tools/install).
 
-Hyperdrive uses the stable build of Rust, but the Wasm processes use the **nightly** build of Rust..
+Hyperdrive and Wasm processes use the stable build of Rust.
 You will want to run the command `rustup update` on a regular basis to keep your version of the language current, especially if you run into issues compiling the runtime down the line.
 
 You will also need to [install NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) in order to build the Wasm processes that are bundled with the core binary.
@@ -136,7 +134,7 @@ You will also need to [install NPM](https://docs.npmjs.com/downloading-and-insta
 Clone and set up the repository:
 
 ```bash
-git clone https://github.com/hyperware-ai/hyperdrive.git
+git clone --recurse-submodules https://github.com/hyperware-ai/hyperdrive.git
 ```
 
 Build the packages that are bundled with the binary:
